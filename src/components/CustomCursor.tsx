@@ -11,16 +11,20 @@ export function CustomCursor() {
     const dot = dotRef.current;
     if (!dot) return;
 
-    let x = window.innerWidth / 2;
-    let y = window.innerHeight / 2;
+    let targetX = window.innerWidth / 2;
+    let targetY = window.innerHeight / 2;
+    let x = targetX;
+    let y = targetY;
     let rafId = 0;
 
     const move = (e: MouseEvent) => {
-      x = e.clientX;
-      y = e.clientY;
+      targetX = e.clientX;
+      targetY = e.clientY;
     };
 
     const render = () => {
+      x += (targetX - x) * 0.15;
+      y += (targetY - y) * 0.15;
       dot.style.transform = `translate(${x}px, ${y}px) translate(-50%, -50%)`;
       rafId = requestAnimationFrame(render);
     };
