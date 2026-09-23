@@ -14,7 +14,7 @@ export function About() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, margin: "-50px" }}
           transition={{ duration: 0.6 }}
-          className="lg:sticky lg:top-32 lg:self-start"
+          className="w-fit lg:sticky lg:top-32 lg:self-start"
         >
           <TechFrame>
             <div className="relative aspect-[4/5] w-full max-w-[280px] bg-surface">
@@ -27,7 +27,7 @@ export function About() {
               />
             </div>
           </TechFrame>
-          <p className="mt-4 font-mono text-xs uppercase tracking-widest text-text-dim">
+          <p className="mt-4 max-w-[280px] font-mono text-xs uppercase tracking-widest text-text-dim">
             {profile.location} · rated 1300 on chess.com
           </p>
         </motion.div>
