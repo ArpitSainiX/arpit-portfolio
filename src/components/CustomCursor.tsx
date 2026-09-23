@@ -32,13 +32,13 @@ export function CustomCursor() {
     const onOver = (e: MouseEvent) => {
       const target = e.target as HTMLElement;
       if (target.closest("a, button, [data-cursor-hover]")) {
-        dot.style.width = "44px";
-        dot.style.height = "44px";
+        dot.style.width = "64px";
+        dot.style.height = "64px";
         dot.style.backgroundColor = "var(--accent)";
         dot.style.opacity = "0.18";
       } else {
-        dot.style.width = "18px";
-        dot.style.height = "18px";
+        dot.style.width = "32px";
+        dot.style.height = "32px";
         dot.style.backgroundColor = "transparent";
         dot.style.opacity = "1";
       }
