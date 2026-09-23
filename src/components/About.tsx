@@ -8,7 +8,7 @@ import { TechFrame } from "@/components/TechFrame";
 export function About() {
   return (
     <section id="about" className="border-t border-border py-24 sm:py-32">
-      <div className="mx-auto grid max-w-6xl grid-cols-1 gap-14 px-6 sm:px-8 lg:grid-cols-[0.7fr_1.3fr] lg:gap-16">
+      <div className="mx-auto grid max-w-6xl grid-cols-1 gap-14 px-6 sm:px-8 lg:grid-cols-[auto_1fr] lg:gap-16">
         <motion.div
           initial={{ opacity: 0, y: 42 }}
           whileInView={{ opacity: 1, y: 0 }}
