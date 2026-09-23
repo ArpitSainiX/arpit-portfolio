@@ -4,43 +4,45 @@ import { useEffect, useRef } from "react";
 
 export function CustomCursor() {
   const dotRef = useRef<HTMLDivElement>(null);
+  const ringRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
     if (window.matchMedia("(hover: none), (pointer: coarse)").matches) return;
 
     const dot = dotRef.current;
-    if (!dot) return;
+    const ring = ringRef.current;
+    if (!dot || !ring) return;
 
     let targetX = window.innerWidth / 2;
     let targetY = window.innerHeight / 2;
-    let x = targetX;
-    let y = targetY;
+    let ringX = targetX;
+    let ringY = targetY;
     let rafId = 0;
 
     const move = (e: MouseEvent) => {
       targetX = e.clientX;
       targetY = e.clientY;
+      // The solid dot tracks the pointer exactly, one-to-one, with zero lag.
+      dot.style.transform = `translate(${targetX}px, ${targetY}px) translate(-50%, -50%)`;
     };
 
     const render = () => {
-      x += (targetX - x) * 0.15;
-      y += (targetY - y) * 0.15;
-      dot.style.transform = `translate(${x}px, ${y}px) translate(-50%, -50%)`;
+      ringX += (targetX - ringX) * 0.12;
+      ringY += (targetY - ringY) * 0.12;
+      ring.style.transform = `translate(${ringX}px, ${ringY}px) translate(-50%, -50%)`;
       rafId = requestAnimationFrame(render);
     };
 
     const onOver = (e: MouseEvent) => {
       const target = e.target as HTMLElement;
       if (target.closest("a, button, [data-cursor-hover]")) {
-        dot.style.width = "64px";
-        dot.style.height = "64px";
-        dot.style.backgroundColor = "var(--accent)";
-        dot.style.opacity = "0.18";
+        ring.style.width = "64px";
+        ring.style.height = "64px";
+        ring.style.opacity = "0.5";
       } else {
-        dot.style.width = "32px";
-        dot.style.height = "32px";
-        dot.style.backgroundColor = "transparent";
-        dot.style.opacity = "1";
+        ring.style.width = "32px";
+        ring.style.height = "32px";
+        ring.style.opacity = "1";
       }
     };
 
@@ -56,11 +58,9 @@ export function CustomCursor() {
   }, []);
 
   return (
-    <div
-      ref={dotRef}
-      className="cursor-dot hidden md:block"
-      style={{ left: 0, top: 0 }}
-      aria-hidden
-    />
+    <>
+      <div ref={ringRef} className="cursor-ring hidden md:block" style={{ left: 0, top: 0 }} aria-hidden />
+      <div ref={dotRef} className="cursor-dot hidden md:block" style={{ left: 0, top: 0 }} aria-hidden />
+    </>
   );
 }
