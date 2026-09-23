@@ -4,6 +4,7 @@ import "./globals.css";
 import { ThemeProvider } from "@/components/ThemeProvider";
 import { CustomCursor } from "@/components/CustomCursor";
 import { AmbientGlow } from "@/components/AmbientGlow";
+import { SmoothScroll } from "@/components/SmoothScroll";
 import { profile } from "@/lib/data";
 
 const instrumentSerif = Instrument_Serif({
@@ -81,6 +82,7 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
       </head>
       <body className="min-h-full flex flex-col bg-bg text-text grain">
         <ThemeProvider attribute="data-theme" defaultTheme="dark" enableSystem={false}>
+          <SmoothScroll />
           <AmbientGlow />
           <CustomCursor />
           {children}
