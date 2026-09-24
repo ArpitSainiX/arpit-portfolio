@@ -166,15 +166,31 @@ export type ExperienceItem = {
 
 export const experience: ExperienceItem[] = [
   {
-    role: "AI Model Response Evaluator",
-    org: "Remote Contract",
-    period: "2025 — Present",
+    role: "Project Contributor",
+    org: "Handshake · Freelance",
+    period: "Jul 2026 — Present",
+    location: "India · Remote",
+    points: ["Contributing to a freelance project built on Python and Docker."],
+  },
+  {
+    role: "AI Evaluation Specialist",
+    org: "Deccan AI Experts · Freelance",
+    period: "Sep 2025 — Mar 2026",
+    location: "Moradabad, India · Remote",
+    points: [
+      "Focused on improving AI model responses to ensure they're clear, accurate, and easy for users to understand.",
+      "Refined how information is structured and how user intent is interpreted across chatbot responses.",
+      "Core skills: chatbot response evaluation, prompt engineering.",
+    ],
+  },
+  {
+    role: "Contributor",
+    org: "Outlier · Part-time",
+    period: "Jun 2025 — Aug 2025",
     location: "Remote",
     points: [
-      "Evaluate and score AI-generated responses to improve model accuracy, relevance, and tone across diverse prompts.",
-      "Perform multilingual data annotation and text classification supporting LLM training pipelines.",
-      "Engineer and refine prompts for large language models to optimize output quality.",
-      "Contribute to measurable improvements in response quality and end-user experience metrics.",
+      "Performed multilingual data annotation and text classification.",
+      "Evaluated chatbot responses and refined prompts for LLM applications.",
     ],
   },
   {
