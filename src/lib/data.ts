@@ -162,6 +162,8 @@ export type ExperienceItem = {
   period: string;
   location: string;
   points: string[];
+  skills: string[];
+  badge: { label: string; className: string };
 };
 
 export const experience: ExperienceItem[] = [
@@ -171,6 +173,8 @@ export const experience: ExperienceItem[] = [
     period: "Jul 2026 — Present",
     location: "India · Remote",
     points: ["Contributing to a freelance project built on Python and Docker."],
+    skills: ["Python", "Docker", "Shell Scripting", "English"],
+    badge: { label: "H", className: "bg-[#c3f53c] text-[#0b0b0c]" },
   },
   {
     role: "AI Evaluation Specialist",
@@ -180,8 +184,18 @@ export const experience: ExperienceItem[] = [
     points: [
       "Focused on improving AI model responses to ensure they're clear, accurate, and easy for users to understand.",
       "Refined how information is structured and how user intent is interpreted across chatbot responses.",
-      "Core skills: chatbot response evaluation, prompt engineering.",
     ],
+    skills: [
+      "Chatbot Responses",
+      "Prompt Engineering",
+      "Data Annotation",
+      "High Level of Accuracy",
+      "Computer Science",
+      "English",
+      "Data AI",
+      "Artificial Intelligence (AI)",
+    ],
+    badge: { label: "✦", className: "bg-gradient-to-br from-teal-600 to-emerald-700 text-white" },
   },
   {
     role: "Contributor",
@@ -192,6 +206,8 @@ export const experience: ExperienceItem[] = [
       "Performed multilingual data annotation and text classification.",
       "Evaluated chatbot responses and refined prompts for LLM applications.",
     ],
+    skills: ["Prompt Engineering", "Data Annotation", "Artificial Intelligence (AI)", "Python"],
+    badge: { label: "O", className: "bg-black text-white border border-white/20" },
   },
   {
     role: "Freelance Web Developer & Video Editor",
@@ -204,6 +220,8 @@ export const experience: ExperienceItem[] = [
       "Edited 10+ educational and promotional videos in Adobe Premiere Pro for clients and personal projects.",
       "Managed multiple concurrent projects independently, consistently delivering on time.",
     ],
+    skills: ["HTML5", "CSS3", "JavaScript", "Adobe Premiere Pro", "Vercel"],
+    badge: { label: "AS", className: "border border-border bg-surface-2 text-accent" },
   },
 ];
 
