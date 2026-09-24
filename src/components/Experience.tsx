@@ -2,6 +2,7 @@
 
 import { motion } from "framer-motion";
 import { experience } from "@/lib/data";
+import { TiltCard } from "@/components/TiltCard";
 
 export function Experience() {
   return (
@@ -42,13 +43,7 @@ export function Experience() {
                 {item.badge.label}
               </div>
 
-              <article className="group relative flex-1 overflow-hidden rounded-2xl border border-border bg-surface p-6 transition-colors hover:border-accent/50 sm:p-7">
-                <div
-                  className="pointer-events-none absolute -right-20 -top-20 h-48 w-48 rounded-full opacity-0 blur-3xl transition-opacity duration-500 group-hover:opacity-100"
-                  style={{ background: "var(--accent-soft)" }}
-                  aria-hidden
-                />
-
+              <TiltCard className="flex-1 overflow-hidden rounded-2xl border border-border bg-surface p-6 transition-colors hover:border-accent/50 sm:p-7">
                 <div className="relative flex flex-wrap items-baseline justify-between gap-x-3 gap-y-1">
                   <h3 className="font-display text-xl font-bold sm:text-2xl">{item.role}</h3>
                   <span className="font-mono text-xs text-text-dim">{item.period}</span>
@@ -76,7 +71,7 @@ export function Experience() {
                     </li>
                   ))}
                 </ul>
-              </article>
+              </TiltCard>
             </motion.div>
           ))}
         </div>
