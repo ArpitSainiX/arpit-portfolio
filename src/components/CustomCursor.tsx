@@ -27,8 +27,8 @@ export function CustomCursor() {
     };
 
     const render = () => {
-      ringX += (targetX - ringX) * 0.06;
-      ringY += (targetY - ringY) * 0.06;
+      ringX += (targetX - ringX) * 0.12;
+      ringY += (targetY - ringY) * 0.12;
       ring.style.transform = `translate(${ringX}px, ${ringY}px) translate(-50%, -50%)`;
       rafId = requestAnimationFrame(render);
     };
