@@ -5,6 +5,7 @@ import { ThemeProvider } from "@/components/ThemeProvider";
 import { CustomCursor } from "@/components/CustomCursor";
 import { AmbientGlow } from "@/components/AmbientGlow";
 import { SmoothScroll } from "@/components/SmoothScroll";
+import { ClickSound } from "@/components/ClickSound";
 import { profile } from "@/lib/data";
 
 const instrumentSerif = Instrument_Serif({
@@ -85,6 +86,7 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
           <SmoothScroll />
           <AmbientGlow />
           <CustomCursor />
+          <ClickSound />
           {children}
         </ThemeProvider>
       </body>
